@@ -30,21 +30,30 @@
    
 3. 使用vs2022后打开时，将属性中的字符集改为多字节符集![](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20000906.png)
 
-4. 游戏截图
+## 使用的技术
 
-![](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001337.png)
+| 技术             | 描述                                       |
+| ---------------- | ------------------------------------------ |
+| C 语言           | 主要编程语言，用于实现五子棋游戏功能       |
+| 图形库（如果有） | 用于绘制游戏界面和特效                     |
+| Git              | 版本控制工具，用于团队协作和代码管理       |
+| GitHub           | 代码托管平台，用于存储项目代码和文档       |
+| Markdown         | 轻量级标记语言，用于编写 README 文件和文档 |
 
-![屏幕截图 2023-10-11 001407](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001407.png)
+## 致谢
 
-![屏幕截图 2023-10-11 001415](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001415.png)
++ 感谢项目贡献者的辛勤工作和热情参与。
++ 感谢开源社区的开发者们，为我们提供了丰富的技术资源。
++ 感谢朋友和家人的支持和理解。
 
-
-
-
+如果你使用了特定的开源库或资源，也可以在致谢部分感谢这些项目的作者和贡献者。
 
 ## 如何贡献
 
 如果你对这个项目有任何建议或改进意见，欢迎提交Issues或者Pull Requests。让我们一起把这个游戏做得更好！
+
+- 提交 Issue 报告问题或提出建议
+- 提交 Pull Request 改进项目代码
 
 ------
 
@@ -52,3 +61,13 @@
 
 作者：Kling-zero
 GitHub：[我的GitHub地址](https://github.com/Kling-zero)
+
+## PS：附上游戏截图
+
+1. 游戏截图
+
+![](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001337.png)
+
+![屏幕截图 2023-10-11 001407](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001407.png)
+
+![屏幕截图 2023-10-11 001415](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001415.png)
