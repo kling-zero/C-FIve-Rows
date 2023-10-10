@@ -13,46 +13,46 @@ int musicb = 0;
 int musica = 1;
 char board[15][15];
 int x, y, i, j, ret1;
-void button1(int x, int y, int w, int z, const char* text);//æŒ‰é’®é€‰é¡¹
-void button2(int x, int y, int w, int z, const char* text);//æŒ‰é’®é€‰é¡¹
-void gamepage();//äº”å­æ£‹æ¸¸æˆé¡µé¢
-void menu();//å¼€å§‹é¡µé¢
-void quitpage();//é€€å‡ºæ¸¸æˆé¡µé¢
-void game1();//æ­£å¸¸æ¸¸æˆé¡µé¢
-void game2();//é“å…·æ¨¡å¼é¡µé¢
-void playwaypage();//æ¸¸ç©æ–¹å¼è¯¦ç»†
-void optionpage();//è®¾ç½®é¡µé¢è¯¦ç»†
-void gameinfo();//æ¸¸æˆç©æ³•ä»‹ç»â€¦â€¦
-void overpage();//ç»“æŸé¡µé¢
-void clearchess();//å¤åˆ¶æ£‹ç›˜
-int check_win(int x, int y, char color);//è¾“èµ¢åˆ¤æ–­
-void drawboard();//æ‰“å°æ£‹ç›˜
-void remove();//æ¶ˆé™¤åŠŸèƒ½
-void gamemaker();//åˆ¶ä½œè€…åå•
-void background();//èƒŒæ™¯è£…é¥°
-void gameintroduce();//æ¸¸ç©ä»‹ç»é¡µé¢
+void button1(int x, int y, int w, int z, const char* text);//°´Å¥Ñ¡Ïî
+void button2(int x, int y, int w, int z, const char* text);//°´Å¥Ñ¡Ïî
+void gamepage();//Îå×ÓÆåÓÎÏ·Ò³Ãæ
+void menu();//¿ªÊ¼Ò³Ãæ
+void quitpage();//ÍË³öÓÎÏ·Ò³Ãæ
+void game1();//Õı³£ÓÎÏ·Ò³Ãæ
+void game2();//µÀ¾ßÄ£Ê½Ò³Ãæ
+void playwaypage();//ÓÎÍæ·½Ê½ÏêÏ¸
+void optionpage();//ÉèÖÃÒ³ÃæÏêÏ¸
+void gameinfo();//ÓÎÏ·Íæ·¨½éÉÜ¡­¡­
+void overpage();//½áÊøÒ³Ãæ
+void clearchess();//¸´ÖÆÆåÅÌ
+int check_win(int x, int y, char color);//ÊäÓ®ÅĞ¶Ï
+void drawboard();//´òÓ¡ÆåÅÌ
+void remove();//Ïû³ı¹¦ÄÜ
+void gamemaker();//ÖÆ×÷ÕßÃûµ¥
+void background();//±³¾°×°ÊÎ
+void gameintroduce();//ÓÎÍæ½éÉÜÒ³Ãæ
 void circlelabel(int x, int y, int r, const char* text);
 void Rectangularlabel(int x, int y, int w, int h, const char* text);
-void destroy();//é”€æ¯åŠŸèƒ½
-void musictexiao1();//éŸ³æ•ˆåŠŸèƒ½
+void destroy();//Ïú»Ù¹¦ÄÜ
+void musictexiao1();//ÒôĞ§¹¦ÄÜ
 void musictexiao2();
 void musictexiao3();
-int check_tri(int x, int y, char color);//ä¸‰å­è¿æ¥åˆ¤æ–­
+int check_tri(int x, int y, char color);//Èı×ÓÁ¬½ÓÅĞ¶Ï
 void musicplaybr(void);
 
-void refreshColor();//çš®è‚¤é¢œè‰²é€‰æ‹©
+void refreshColor();//Æ¤·ôÑÕÉ«Ñ¡Ôñ
 int main()
 {
 	int musicb = 0;
 	musicplaybr();
 	menu();
-}//ä¸»å‡½æ•°
+}//Ö÷º¯Êı
 void button1(int x, int y, int w, int h, const char* text) {
 	setbkmode(TRANSPARENT);
 	settextcolor(BLACK);
 	setfillcolor(RGB(190, 170, 200));
 	fillroundrect(x, y, x + w, y + h, 10, 10);
-	settextstyle(30, 0, "æ¥·ä½“");
+	settextstyle(30, 0, "¿¬Ìå");
 	int tx = x + (w - textwidth(text)) / 2;
 	int ty = y + (h - textheight(text)) / 2;
 	outtextxy(tx, ty, text);
@@ -64,18 +64,18 @@ void button2(int x, int y, int w, int h, const char* text)
 	settextcolor(BLACK);
 	setfillcolor(RGB(140, 180, 120));
 	fillroundrect(x, y, x + w, y + h, 10, 10);
-	settextstyle(30, 0, "æ¥·ä½“");
+	settextstyle(30, 0, "¿¬Ìå");
 	int tx = x + (w - textwidth(text)) / 2;
 	int ty = y + (h - textheight(text)) / 2;
 	outtextxy(tx, ty, text);
 }
 void gamepage()
 {
-	initgraph(1000, 800);//åˆå§‹åŒ–ç»˜å›¾çª—å£
-	setbkcolor(YELLOW);//ç»˜å›¾èƒŒæ™¯è‰²
-	cleardevice();//ä½¿ç”¨å½“å‰èƒŒæ™¯è‰²æ¸…ç©ºä¸Šä¸€ä¸ªç»˜å›¾
-	setlinecolor(BLACK);//è®¾ç½®å½“å‰è®¾å¤‡ç”»çº¿é¢œè‰²
-	for (int i = 50; i <= 750; i += 50)//ç”»æ£‹ç›˜
+	initgraph(1000, 800);//³õÊ¼»¯»æÍ¼´°¿Ú
+	setbkcolor(YELLOW);//»æÍ¼±³¾°É«
+	cleardevice();//Ê¹ÓÃµ±Ç°±³¾°É«Çå¿ÕÉÏÒ»¸ö»æÍ¼
+	setlinecolor(BLACK);//ÉèÖÃµ±Ç°Éè±¸»­ÏßÑÕÉ«
+	for (int i = 50; i <= 750; i += 50)//»­ÆåÅÌ
 	{
 		line(i + 100, 50, i + 100, 750);
 		line(150, i, 850, i);
@@ -90,7 +90,7 @@ void gamepage()
 		game2();
 	}
 }
-void game1()//æ­£å¸¸æ¨¡å¼
+void game1()//Õı³£Ä£Ê½
 {
 	for (i = 1; i <= 15; i++)
 	{
@@ -99,8 +99,8 @@ void game1()//æ­£å¸¸æ¨¡å¼
 			board[i][j] = 'a';
 		}
 	}
-	button1(870, 200, 130, 50, "æ¸…ç©ºæ£‹ç›˜");
-	button1(870, 400, 130, 50, "è¿”å›é¡µé¢");
+	button1(870, 200, 130, 50, "Çå¿ÕÆåÅÌ");
+	button1(870, 400, 130, 50, "·µ»ØÒ³Ãæ");
 	ExMessage m;
 	int x, y, ret1;
 	int a = 0;
@@ -118,14 +118,14 @@ void game1()//æ­£å¸¸æ¨¡å¼
 					board[i][j] = 'a';
 				}
 			}
-			for (int i = 50; i <= 750; i += 50)//ç”»æ£‹ç›˜
+			for (int i = 50; i <= 750; i += 50)//»­ÆåÅÌ
 			{
 				line(i + 100, 50, i + 100, 750);
 				line(150, i, 850, i);
 			}
 
-			button1(870, 200, 130, 50, "æ¸…ç©ºæ£‹ç›˜");
-			button1(870, 400, 130, 50, "è¿”å›é¡µé¢");
+			button1(870, 200, 130, 50, "Çå¿ÕÆåÅÌ");
+			button1(870, 400, 130, 50, "·µ»ØÒ³Ãæ");
 
 		}
 		if (m.x <= 1000 && m.y <= 470 && m.x >= 850 && m.y >= 380 && m.message == WM_LBUTTONDOWN)
@@ -192,7 +192,7 @@ void quitpage()
 	closegraph();
 	exit(0);
 }
-void playwaypage()//æ¸¸ç©æ–¹å¼é¡µé¢
+void playwaypage()//ÓÎÍæ·½Ê½Ò³Ãæ
 {
 
 	setbkcolor(RGB(180, 180, 180));
@@ -200,9 +200,9 @@ void playwaypage()//æ¸¸ç©æ–¹å¼é¡µé¢
 	background();
 	setfillcolor(BLACK);
 	settextcolor(BLACK);
-	settextstyle(40, 0, "æ¥·ä½“");
-	button2(163, 250, 270, 40, "æ­£å¸¸æ¨¡å¼");
-	button2(163, 500, 270, 40, "é“å…·æ¨¡å¼");
+	settextstyle(40, 0, "¿¬Ìå");
+	button2(163, 250, 270, 40, "Õı³£Ä£Ê½");
+	button2(163, 500, 270, 40, "µÀ¾ßÄ£Ê½");
 	if (token == 1)
 		rectangle(163, 250, 433, 290);
 	ExMessage m;
@@ -215,7 +215,7 @@ void playwaypage()//æ¸¸ç©æ–¹å¼é¡µé¢
 				if (m.message == WM_LBUTTONDOWN)
 				{
 					token = 0;
-					break;//æ­£å¸¸
+					break;//Õı³£
 				}
 			}
 			if (m.x >= 163 && m.x <= 433 && m.y >= 500 && m.y <= 540)
@@ -224,14 +224,14 @@ void playwaypage()//æ¸¸ç©æ–¹å¼é¡µé¢
 				{
 					token = 1;
 
-					break;//é“å…·
+					break;//µÀ¾ß
 				}
 			}
 			switch (m.message)
 			{
 			case WM_MOUSEMOVE:
 				printf("%d %d\n", m.x, m.y);
-				if (flag == 0 && m.x >= 153 && m.x <= 453 && m.y >= 500 && m.y <= 500 + 40)//èƒŒæ™¯
+				if (flag == 0 && m.x >= 153 && m.x <= 453 && m.y >= 500 && m.y <= 500 + 40)//±³¾°
 
 				{
 					setlinecolor(BLACK);
@@ -239,7 +239,7 @@ void playwaypage()//æ¸¸ç©æ–¹å¼é¡µé¢
 					rectangle(163, 500, 433, 540);
 				}
 
-				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 250 && m.y <= 250 + 40)//éŸ³æ•ˆè®¾ç½®
+				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 250 && m.y <= 250 + 40)//ÒôĞ§ÉèÖÃ
 				{
 					setlinecolor(BLACK);
 					setlinestyle(PS_SOLID, 3);
@@ -247,7 +247,7 @@ void playwaypage()//æ¸¸ç©æ–¹å¼é¡µé¢
 				}
 				else
 				{
-					if (flag == 0) //æœªè§¦å‘ä¸ºâ€¦â€¦æ¡†ï¼Œå…¶ä½™ä¸ºâ€¦â€¦æ¡†
+					if (flag == 0) //Î´´¥·¢Îª¡­¡­¿ò£¬ÆäÓàÎª¡­¡­¿ò
 					{
 						setlinecolor(WHITE);
 						setlinestyle(PS_SOLID, 3);
@@ -262,37 +262,37 @@ void playwaypage()//æ¸¸ç©æ–¹å¼é¡µé¢
 		}
 	}
 }
-void optionpage()//è®¾ç½®é¡µé¢ï¼ˆèƒŒæ™¯ï¼ŒéŸ³æ•ˆï¼Œåœ°å›¾é€‰æ‹©ï¼Œå…³äºæˆ‘ä»¬ï¼‰
+void optionpage()//ÉèÖÃÒ³Ãæ£¨±³¾°£¬ÒôĞ§£¬µØÍ¼Ñ¡Ôñ£¬¹ØÓÚÎÒÃÇ£©
 {
 	flag = 0;
 	setbkcolor(RGB(180, 180, 180));
 	cleardevice();
 	setfillcolor(BLACK);
 	settextcolor(BLACK);
-	settextstyle(60, 0, "å®‹ä½“");
-	outtextxy(230, 60, "è®¾ç½®");
+	settextstyle(60, 0, "ËÎÌå");
+	outtextxy(230, 60, "ÉèÖÃ");
 	setlinecolor(RED);
-	button2(163, 200, 270, 40, "éŸ³æ•ˆï¼š");
-	button2(163, 350, 270, 40, "èƒŒæ™¯éŸ³ä¹ï¼š");
-	button2(163, 500, 270, 40, "åœ°å›¾é€‰æ‹©");
-	button2(163, 650, 270, 40, "å…³äºæˆ‘ä»¬");
-	outtextxy(45, 40, "è¿”å›");
+	button2(163, 200, 270, 40, "ÒôĞ§£º");
+	button2(163, 350, 270, 40, "±³¾°ÒôÀÖ£º");
+	button2(163, 500, 270, 40, "µØÍ¼Ñ¡Ôñ");
+	button2(163, 650, 270, 40, "¹ØÓÚÎÒÃÇ");
+	outtextxy(45, 40, "·µ»Ø");
 	ExMessage m;
-	//æ¥å—é¼ æ ‡æ¶ˆæ¯
+	//½ÓÊÜÊó±êÏûÏ¢
 	int c = 0, d = 0;
 	while (true)
 	{
 		if (peekmessage(&m, EX_MOUSE)) {
 			if (flag == 0 && m.x >= 30 && m.x <= 130 && m.y >= 20 && m.y <= 90 && m.message == WM_LBUTTONDOWN)
 			{
-				printf("æµ‹è¯•æˆåŠŸ");
+				printf("²âÊÔ³É¹¦");
 				break;
 			}
 			switch (m.message)
 			{
 			case WM_MOUSEMOVE:
 				printf("%d %d\n", m.x, m.y);
-				if (flag == 0 && m.x >= 153 && m.x <= 453 && m.y >= 500 && m.y <= 500 + 40)//èƒŒæ™¯
+				if (flag == 0 && m.x >= 153 && m.x <= 453 && m.y >= 500 && m.y <= 500 + 40)//±³¾°
 
 				{
 					setlinecolor(BLACK);
@@ -300,20 +300,20 @@ void optionpage()//è®¾ç½®é¡µé¢ï¼ˆèƒŒæ™¯ï¼ŒéŸ³æ•ˆï¼Œåœ°å›¾é€‰æ‹©ï¼Œå…³äºæˆ‘ä»¬ï
 					rectangle(163, 500, 433, 540);
 				}
 
-				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 200 && m.y <= 200 + 40)//éŸ³æ•ˆè®¾ç½®
+				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 200 && m.y <= 200 + 40)//ÒôĞ§ÉèÖÃ
 				{
 					setlinecolor(BLACK);
 					setlinestyle(PS_SOLID, 3);
 					rectangle(163, 200, 433, 240);
 				}
 
-				else if (flag == 0 && m.x >= 163 && m.x <= 430 && m.y >= 350 && m.y <= 350 + 40)//åœ°å›¾é€‰æ‹©
+				else if (flag == 0 && m.x >= 163 && m.x <= 430 && m.y >= 350 && m.y <= 350 + 40)//µØÍ¼Ñ¡Ôñ
 				{
 					setlinecolor(BLACK);
 					setlinestyle(PS_SOLID, 3);
 					rectangle(163, 350, 433, 390);
 				}
-				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 650 && m.y <= 690)//å…³äºæˆ‘ä»¬
+				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 650 && m.y <= 690)//¹ØÓÚÎÒÃÇ
 				{
 					setlinecolor(BLACK);
 					setlinestyle(PS_SOLID, 3);
@@ -327,7 +327,7 @@ void optionpage()//è®¾ç½®é¡µé¢ï¼ˆèƒŒæ™¯ï¼ŒéŸ³æ•ˆï¼Œåœ°å›¾é€‰æ‹©ï¼Œå…³äºæˆ‘ä»¬ï
 				}
 				else
 				{
-					if (flag == 0) //æœªè§¦å‘ä¸ºâ€¦â€¦æ¡†ï¼Œå…¶ä½™ä¸ºâ€¦â€¦æ¡†
+					if (flag == 0) //Î´´¥·¢Îª¡­¡­¿ò£¬ÆäÓàÎª¡­¡­¿ò
 					{
 						setlinecolor(WHITE);
 						setlinestyle(PS_SOLID, 3);
@@ -351,14 +351,14 @@ void optionpage()//è®¾ç½®é¡µé¢ï¼ˆèƒŒæ™¯ï¼ŒéŸ³æ•ˆï¼Œåœ°å›¾é€‰æ‹©ï¼Œå…³äºæˆ‘ä»¬ï
 				{
 					if (d % 2 == 0)
 					{
-						button2(163, 200, 270, 40, "éŸ³æ•ˆï¼šå…³");
+						button2(163, 200, 270, 40, "ÒôĞ§£º¹Ø");
 						d++;
 						musica = 0;
 						continue;
 					}
 					if (d % 2 != 0)
 					{
-						button2(163, 200, 270, 40, "éŸ³æ•ˆï¼šå¼€");
+						button2(163, 200, 270, 40, "ÒôĞ§£º¿ª");
 						d++;
 						musica = 1;
 						continue;
@@ -372,16 +372,16 @@ void optionpage()//è®¾ç½®é¡µé¢ï¼ˆèƒŒæ™¯ï¼ŒéŸ³æ•ˆï¼Œåœ°å›¾é€‰æ‹©ï¼Œå…³äºæˆ‘ä»¬ï
 
 					if (c % 2 == 0)
 					{
-						button2(163, 350, 270, 40, "èƒŒæ™¯éŸ³ä¹ï¼šå…³");
+						button2(163, 350, 270, 40, "±³¾°ÒôÀÖ£º¹Ø");
 						c++;
 						mciSendString("stop aaa", NULL, 0, NULL);
 						continue;
 					}
 					if (c % 2 != 0)
 					{
-						button2(163, 350, 270, 40, "èƒŒæ™¯éŸ³ä¹ï¼šå¼€");
+						button2(163, 350, 270, 40, "±³¾°ÒôÀÖ£º¿ª");
 						c++;
-						mciSendString("play aaa", 0, 0, 0);//ç»§ç»­æ’­æ”¾
+						mciSendString("play aaa", 0, 0, 0);//¼ÌĞø²¥·Å
 						continue;
 
 					}
@@ -404,13 +404,13 @@ void gameinfo()
 	setbkcolor(RGB(180, 180, 180));
 	cleardevice();
 	setfillcolor(BLACK);
-	button2(190, 600, 200, 60, "è¿”å›é¡µé¢");
+	button2(190, 600, 200, 60, "·µ»ØÒ³Ãæ");
 	settextcolor(BLACK);
-	settextstyle(40, 0, "æ¥·ä½“");
-	outtextxy(200, 5, "æ¸¸ç©ä»‹ç»");
+	settextstyle(40, 0, "¿¬Ìå");
+	outtextxy(200, 5, "ÓÎÍæ½éÉÜ");
 	gameintroduce();
 	ExMessage m;
-	while (1)//å„ç§åŠŸèƒ½çš„å®ç°
+	while (1)//¸÷ÖÖ¹¦ÄÜµÄÊµÏÖ
 	{
 		if (peekmessage(&m, EX_MOUSE))
 		{
@@ -427,10 +427,10 @@ void gameinfo()
 }
 void menu()
 {
-start_game:;//ä»…é’ˆå¯¹game1
+start_game:;//½öÕë¶Ôgame1
 	initgraph(600, 800);
 start:;
-	int  flag = 0;//åˆå§‹å€¼
+	int  flag = 0;//³õÊ¼Öµ
 	//mciSendString("open ./bk.mp3 ", 0, 0, 0);
 	//mciSendString("play ./bk.mp3 repeat ", 0, 0, 0);
 	if (flag == 0)
@@ -439,16 +439,16 @@ start:;
 		setbkcolor(RGB(200, 140, 20));
 		cleardevice();
 		background();
-		button1(163, 500, 270, 40, "å¼€å§‹æ¸¸æˆ");
-		button1(163, 200, 270, 40, "è®¾ç½®é¡µé¢");
-		button1(163, 350, 270, 40, "æ¸¸ç©è¯´æ˜");
-		button1(163, 650, 270, 40, "é€€å‡ºæ¸¸æˆ");
-		settextstyle(50, 0, "æ¥·ä½“");
+		button1(163, 500, 270, 40, "¿ªÊ¼ÓÎÏ·");
+		button1(163, 200, 270, 40, "ÉèÖÃÒ³Ãæ");
+		button1(163, 350, 270, 40, "ÓÎÍæËµÃ÷");
+		button1(163, 650, 270, 40, "ÍË³öÓÎÏ·");
+		settextstyle(50, 0, "¿¬Ìå");
 		settextcolor(RGB(200, 240, 150));
-		outtextxy(173, 50, "åƒå®äº”å­æ£‹");
+		outtextxy(173, 50, "Ç§ÄşÎå×ÓÆå");
 	}
 option:;
-	if (flag == 1)//1ä¸ºè®¾ç½®é¡µé¢
+	if (flag == 1)//1ÎªÉèÖÃÒ³Ãæ
 	{
 		setbkcolor(RGB(120, 160, 40));
 		cleardevice();
@@ -456,7 +456,7 @@ option:;
 		goto start;
 	}
 playway:;
-	if (flag == 2)//2ä¸ºæ¸¸ç©è¯´æ˜é¡µé¢
+	if (flag == 2)//2ÎªÓÎÍæËµÃ÷Ò³Ãæ
 	{
 		setbkcolor(RGB(10, 150, 100));
 		cleardevice();
@@ -464,18 +464,18 @@ playway:;
 		goto start;
 	}
 game:;
-	if (flag == 3)//3ä¸ºæ¸¸æˆé¡µé¢
+	if (flag == 3)//3ÎªÓÎÏ·Ò³Ãæ
 	{
-		playwaypage();//æ¸¸æˆé€‰æ‹©
+		playwaypage();//ÓÎÏ·Ñ¡Ôñ
 		gamepage();
 		flag = 5;
-		goto over;//è¿”å›åˆå§‹é¡µé¢
+		goto over;//·µ»Ø³õÊ¼Ò³Ãæ
 	}
 quit:;
-	if (flag == 4)//4ä¸ºé€€å‡ºæ¸¸æˆé¡µé¢
+	if (flag == 4)//4ÎªÍË³öÓÎÏ·Ò³Ãæ
 	{
 		quitpage();
-		goto start;//è¿”å›åˆå§‹é¡µé¢
+		goto start;//·µ»Ø³õÊ¼Ò³Ãæ
 	}
 over:;
 	if (flag == 5)
@@ -487,36 +487,36 @@ over:;
 	}
 	Sleep(200);
 	ExMessage m;
-	//æ¥å—é¼ æ ‡æ¶ˆæ¯
+	//½ÓÊÜÊó±êÏûÏ¢
 	while (true)
 	{
 		if (peekmessage(&m, EX_MOUSE)) {
 			switch (m.message)
 			{
 			case WM_MOUSEMOVE:
-				//å¼€å§‹æ¸¸æˆ
+				//¿ªÊ¼ÓÎÏ·
 				printf("%d %d\n", m.x, m.y);
-				if (flag == 0 && m.x >= 153 && m.x <= 453 && m.y >= 500 && m.y <= 500 + 40)//å¼€å§‹æ¸¸æˆæŒ‰é’®æ¡†
+				if (flag == 0 && m.x >= 153 && m.x <= 453 && m.y >= 500 && m.y <= 500 + 40)//¿ªÊ¼ÓÎÏ·°´Å¥¿ò
 				{
 					setlinecolor(WHITE);
 					setlinestyle(PS_SOLID, 3);
 					rectangle(163, 500, 433, 540);
 				}
-				//è®¾ç½®
-				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 200 && m.y <= 200 + 40)//è®¾ç½®é¡µé¢æŒ‰é’®æ¡†
+				//ÉèÖÃ
+				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 200 && m.y <= 200 + 40)//ÉèÖÃÒ³Ãæ°´Å¥¿ò
 				{
 					setlinecolor(WHITE);
 					setlinestyle(PS_SOLID, 3);
 					rectangle(163, 200, 433, 240);
 				}
-				//æ¸¸ç©æ–¹å¼
-				else if (flag == 0 && m.x >= 163 && m.x <= 430 && m.y >= 350 && m.y <= 350 + 40)//æ¸¸ç©æ–¹å¼æ¡†
+				//ÓÎÍæ·½Ê½
+				else if (flag == 0 && m.x >= 163 && m.x <= 430 && m.y >= 350 && m.y <= 350 + 40)//ÓÎÍæ·½Ê½¿ò
 				{
 					setlinecolor(WHITE);
 					setlinestyle(PS_SOLID, 3);
 					rectangle(163, 350, 433, 390);
 				}
-				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 650 && m.y <= 690)//é€€å‡ºæ¸¸æˆé¡µé¢
+				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 650 && m.y <= 690)//ÍË³öÓÎÏ·Ò³Ãæ
 				{
 					setlinecolor(WHITE);
 					setlinestyle(PS_SOLID, 3);
@@ -524,7 +524,7 @@ over:;
 				}
 				else
 				{
-					if (flag == 0) //æœªè§¦å‘ä¸ºâ€¦â€¦æ¡†ï¼Œå…¶ä½™ä¸ºâ€¦â€¦æ¡†
+					if (flag == 0) //Î´´¥·¢Îª¡­¡­¿ò£¬ÆäÓàÎª¡­¡­¿ò
 					{
 						setlinecolor(BLACK);
 						setlinestyle(PS_SOLID, 3);
@@ -536,7 +536,7 @@ over:;
 				}
 
 				break;
-			case WM_LBUTTONDOWN://å¼€å§‹æ¸¸æˆé¡µé¢è¿›å…¥
+			case WM_LBUTTONDOWN://¿ªÊ¼ÓÎÏ·Ò³Ãæ½øÈë
 				if (flag == 0 && m.x >= 153 && m.x <= 433 && m.y >= 500 && m.y <= 500 + 40)
 				{
 					Sleep(300);
@@ -544,21 +544,21 @@ over:;
 					flag = 3;
 					goto game;
 				}
-				//è®¾ç½®é¡µé¢è¿›å…¥
+				//ÉèÖÃÒ³Ãæ½øÈë
 				else  if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 200 && m.y <= 200 + 40)
 				{
-					printf("è¿›å…¥è®¾ç½®é¡µé¢");
+					printf("½øÈëÉèÖÃÒ³Ãæ");
 					flag = 1;
-					goto option;//è·³è½¬åˆ°è®¾ç½®é¡µé¢
+					goto option;//Ìø×ªµ½ÉèÖÃÒ³Ãæ
 				}
-				//æ¸¸ç©æ–¹å¼é¡µé¢è¿›å…¥
+				//ÓÎÍæ·½Ê½Ò³Ãæ½øÈë
 				else if (m.x >= 160 && m.x <= 430 && m.y >= 350 && m.y <= 350 + 40)
 				{
-					//æ¸¸ç©æ–¹å¼å‡½æ•°å®ç°
+					//ÓÎÍæ·½Ê½º¯ÊıÊµÏÖ
 					flag = 2;
-					goto playway;//è·³è½¬è§„åˆ™ä»‹ç»
+					goto playway;//Ìø×ª¹æÔò½éÉÜ
 				}
-				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 650 && m.y <= 650 + 40)//é€€å‡ºæ¸¸æˆé¡µé¢
+				else if (flag == 0 && m.x >= 163 && m.x <= 433 && m.y >= 650 && m.y <= 650 + 40)//ÍË³öÓÎÏ·Ò³Ãæ
 				{
 					flag = 4;
 					goto quit;
@@ -576,8 +576,8 @@ void overpage()
 	initgraph(300, 400);
 	setbkcolor(WHITE);
 	cleardevice();
-	button1(75, 120, 150, 50, "å†æ¥ä¸€å±€");
-	button1(75, 220, 150, 50, "é€€å‡ºæ¸¸æˆ");
+	button1(75, 120, 150, 50, "ÔÙÀ´Ò»¾Ö");
+	button1(75, 220, 150, 50, "ÍË³öÓÎÏ·");
 	ExMessage m;
 	while (1)
 	{
@@ -587,21 +587,21 @@ void overpage()
 			{
 				if (m.message == WM_LBUTTONDOWN)
 				{
-					break;//æ­£å¸¸
+					break;//Õı³£
 				}
 			}
 			if (m.x <= 225 && m.x >= 75 && m.y <= 270 && m.y >= 220)
 			{
 				if (m.message == WM_LBUTTONDOWN) {
-					closegraph(); // å…³é—­ç»˜å›¾çª—å£
-					exit(0);    //å¼ºåˆ¶é€€å‡º
+					closegraph(); // ¹Ø±Õ»æÍ¼´°¿Ú
+					exit(0);    //Ç¿ÖÆÍË³ö
 				}
 			}
 		}
 	}
 
 }
-void clearchess()//å¤åˆ¶æ£‹ç›˜
+void clearchess()//¸´ÖÆÆåÅÌ
 {
 
 
@@ -625,9 +625,9 @@ void clearchess()//å¤åˆ¶æ£‹ç›˜
 	}
 
 }
-int check_win(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
+int check_win(int x, int y, char color)//Îå×ÓÆåÅĞ¶Ï
 {
-	// æ£€æŸ¥æ¨ªå‘æ˜¯å¦æœ‰äº”ä¸ªè¿ç»­çš„æ£‹å­
+	// ¼ì²éºáÏòÊÇ·ñÓĞÎå¸öÁ¬ĞøµÄÆå×Ó
 	int count = 0;
 
 	for (int i = x; i >= 0; i--) {
@@ -647,7 +647,7 @@ int check_win(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
 		return 1;
 	}
 
-	// æ£€æŸ¥ç«–å‘æ˜¯å¦æœ‰äº”ä¸ªè¿ç»­çš„æ£‹å­
+	// ¼ì²éÊúÏòÊÇ·ñÓĞÎå¸öÁ¬ĞøµÄÆå×Ó
 	count = 0;
 	for (int j = y; j >= 0; j--) {
 		if (board[x][j] != color) {
@@ -665,7 +665,7 @@ int check_win(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
 		return 1;
 	}
 
-	// æ£€æŸ¥å·¦ä¸Š - å³ä¸‹æ–œå‘æ˜¯å¦æœ‰äº”ä¸ªè¿ç»­çš„æ£‹å­
+	// ¼ì²é×óÉÏ - ÓÒÏÂĞ±ÏòÊÇ·ñÓĞÎå¸öÁ¬ĞøµÄÆå×Ó
 	count = 0;
 	for (int i = x, j = y; i >= 0 && j >= 0; i--, j--) {
 		if (board[i][j] != color) {
@@ -683,7 +683,7 @@ int check_win(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
 		return 1;
 	}
 
-	// æ£€æŸ¥å·¦ä¸‹ - å³ä¸Šæ–œå‘æ˜¯å¦æœ‰äº”ä¸ªè¿ç»­çš„æ£‹å­
+	// ¼ì²é×óÏÂ - ÓÒÉÏĞ±ÏòÊÇ·ñÓĞÎå¸öÁ¬ĞøµÄÆå×Ó
 	count = 0;
 	for (int i = x, j = y; i < BOARD_SIZE && j >= 0; i++, j--) {
 		if (board[i][j] != color) {
@@ -703,9 +703,9 @@ int check_win(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
 		return 1;
 	}
 }
-int check_tri(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
+int check_tri(int x, int y, char color)//Îå×ÓÆåÅĞ¶Ï
 {
-	// æ£€æŸ¥æ¨ªå‘æ˜¯å¦æœ‰äº”ä¸ªè¿ç»­çš„æ£‹å­
+	// ¼ì²éºáÏòÊÇ·ñÓĞÎå¸öÁ¬ĞøµÄÆå×Ó
 	int count = 0;
 
 	for (int i = x; i >= 0; i--) {
@@ -724,7 +724,7 @@ int check_tri(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
 		return 2;
 	}
 
-	// æ£€æŸ¥ç«–å‘æ˜¯å¦æœ‰äº”ä¸ªè¿ç»­çš„æ£‹å­
+	// ¼ì²éÊúÏòÊÇ·ñÓĞÎå¸öÁ¬ĞøµÄÆå×Ó
 	count = 0;
 	for (int j = y; j >= 0; j--) {
 		if (board[x][j] != color) {
@@ -742,7 +742,7 @@ int check_tri(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
 		return 2;
 	}
 
-	// æ£€æŸ¥å·¦ä¸Š - å³ä¸‹æ–œå‘æ˜¯å¦æœ‰äº”ä¸ªè¿ç»­çš„æ£‹å­
+	// ¼ì²é×óÉÏ - ÓÒÏÂĞ±ÏòÊÇ·ñÓĞÎå¸öÁ¬ĞøµÄÆå×Ó
 	count = 0;
 	for (int i = x, j = y; i >= 0 && j >= 0; i--, j--) {
 		if (board[i][j] != color) {
@@ -760,7 +760,7 @@ int check_tri(int x, int y, char color)//äº”å­æ£‹åˆ¤æ–­
 		return 2;
 	}
 
-	// æ£€æŸ¥å·¦ä¸‹ - å³ä¸Šæ–œå‘æ˜¯å¦æœ‰äº”ä¸ªè¿ç»­çš„æ£‹å­
+	// ¼ì²é×óÏÂ - ÓÒÉÏĞ±ÏòÊÇ·ñÓĞÎå¸öÁ¬ĞøµÄÆå×Ó
 	count = 0;
 	for (int i = x, j = y; i < BOARD_SIZE && j >= 0; i++, j--) {
 		if (board[i][j] != color) {
@@ -827,17 +827,17 @@ void remove()
 }
 void drawboard()
 {
-	button1(370, 5, 270, 40, "é“å…·æ¨¡å¼");
-	button1(0, 0, 125, 30, "ç©å®¶1");
-	button1(875, 0, 125, 30, "ç©å®¶2");
-	Rectangularlabel(0, 200, 130, 50, "é“å…·ç‚¹æ•°ï¼š");
-	Rectangularlabel(870, 200, 130, 50, "é“å…·ç‚¹æ•°ï¼š");
-	button1(370, 755, 270, 40, "è¿”å›é¡µé¢");
-	circlelabel(25, 400, 25, "æ¶ˆé™¤");
-	circlelabel(975, 400, 25, "æ¶ˆé™¤");
-	circlelabel(25, 600, 25, "é”€æ¯");
-	circlelabel(975, 600, 25, "é”€æ¯");
-	for (int i = 50; i <= 750; i += 50)//ç”»æ£‹ç›˜
+	button1(370, 5, 270, 40, "µÀ¾ßÄ£Ê½");
+	button1(0, 0, 125, 30, "Íæ¼Ò1");
+	button1(875, 0, 125, 30, "Íæ¼Ò2");
+	Rectangularlabel(0, 200, 130, 50, "µÀ¾ßµãÊı£º");
+	Rectangularlabel(870, 200, 130, 50, "µÀ¾ßµãÊı£º");
+	button1(370, 755, 270, 40, "·µ»ØÒ³Ãæ");
+	circlelabel(25, 400, 25, "Ïû³ı");
+	circlelabel(975, 400, 25, "Ïû³ı");
+	circlelabel(25, 600, 25, "Ïú»Ù");
+	circlelabel(975, 600, 25, "Ïú»Ù");
+	for (int i = 50; i <= 750; i += 50)//»­ÆåÅÌ
 	{
 		line(i + 100, 50, i + 100, 750);
 		line(150, i, 850, i);
@@ -849,17 +849,17 @@ void gamemaker()
 	setbkcolor(LIGHTGRAY);
 	cleardevice();
 	settextcolor(LIGHTCYAN);
-	button2(190, 600, 200, 60, "è¿”å›é¡µé¢");
-	settextstyle(40, 0, "æ¥·ä½“");
-	outtextxy(173, 10, "åˆ¶ä½œäººåå•");
-	outtextxy(93, 150 + 30, "ç»„é•¿ï¼šæ•…é‡Œ");
-	outtextxy(93, 190 + 30, "å‰¯ç»„é•¿ï¼šK0x1e  æŠ•æŠ•");
-	outtextxy(93, 230 + 30, "æŠ€æœ¯å®˜ï¼šæ‘¸é±¼å¸");
-	outtextxy(93, 270 + 30, "äº§å“ç»ç†ï¼šæ²¡æœ‰è„‘è¢‹  çƒŸå›±");
-	outtextxy(93, 310 + 30, "ç›‘ç£å®˜ï¼š å’¸é±¼ä¹‹ç‹");
-	outtextxy(93, 350 + 30, "ä¿¡æ¯å®˜ï¼š å°å®  è‹å¾·æ´²");
+	button2(190, 600, 200, 60, "·µ»ØÒ³Ãæ");
+	settextstyle(40, 0, "¿¬Ìå");
+	outtextxy(173, 10, "ÖÆ×÷ÈËÃûµ¥");
+	outtextxy(93, 150 + 30, "×é³¤£º¹ÊÀï");
+	outtextxy(93, 190 + 30, "¸±×é³¤£ºK0x1e  Í¶Í¶");
+	outtextxy(93, 230 + 30, "¼¼Êõ¹Ù£ºÃşÓãµÛ");
+	outtextxy(93, 270 + 30, "²úÆ·¾­Àí£ºÃ»ÓĞÄÔ´ü  ÑÌ´Ñ");
+	outtextxy(93, 310 + 30, "¼à¶½¹Ù£º ÏÌÓãÖ®Íõ");
+	outtextxy(93, 350 + 30, "ĞÅÏ¢¹Ù£º Ğ¡Äş  ËÕµÂÖŞ");
 	ExMessage m;
-	while (1)//å„ç§åŠŸèƒ½çš„å®ç°
+	while (1)//¸÷ÖÖ¹¦ÄÜµÄÊµÏÖ
 	{
 		if (peekmessage(&m, EX_MOUSE))
 		{
@@ -882,48 +882,48 @@ void background()
 	setlinecolor(BLACK);
 	rectangle(0, 55, 125, 680);
 	rectangle(470, 55, 600, 680);
-	settextstyle(30, 0, "æ¥·ä½“");
+	settextstyle(30, 0, "¿¬Ìå");
 	settextcolor(BLACK);
-	outtextxy(0, 0 + 60, "å…ˆæ‰‹è¦æ”»");
-	outtextxy(480, 0 + 60, "åæ‰‹è¦å®ˆ");
-	outtextxy(0, 30 + 60, "ä»¥æ”»ä¸ºå®ˆ");
-	outtextxy(480, 30 + 60, "ä»¥å®ˆå¾…æ”»");
-	outtextxy(0, 60 + 60, "æ”»å®ˆè½¬æ¢");
-	outtextxy(480, 60 + 60, "æ…æ€å˜åŒ–");
-	outtextxy(0, 90 + 60, "å…ˆè¡Œäº‰å¤º");
-	outtextxy(480, 90 + 60, "åœ°ç ´å¤©æƒŠ");
-	outtextxy(0, 120 + 60, "å®ˆå–å¤–åŠ¿");
-	outtextxy(480, 120 + 60, "æ”»èšå†…åŠ›");
-	outtextxy(0, 150 + 60, "å…«å¦æ˜“å®ˆ");
-	outtextxy(480, 150 + 60, "æˆè§’æ˜“æ”»");
-	outtextxy(0, 180 + 60, "é˜»æ–­åˆ†éš”");
-	outtextxy(480, 180 + 60, "ç¨³å¦‚æ³°å±±");
-	outtextxy(0, 210 + 60, "ä¸æ€äº‰å…ˆ");
-	outtextxy(480, 210 + 60, "èƒœå¦‚ç™»å¤©");
-	outtextxy(0, 240 + 60, "åˆç›˜äº‰äºŒ");
-	outtextxy(480, 240 + 60, "ç»ˆå±€æŠ¢ä¸‰");
-	outtextxy(0, 270 + 60, "ç•™ä¸‰ä¸å†²");
-	outtextxy(480, 270 + 60, "å˜åŒ–ä¸‡åƒ");
-	outtextxy(0, 300 + 60, "å¤šä¸ªå…ˆæ‰‹");
-	outtextxy(480, 300 + 60, "ç»†ç®—æ¬¡å…ˆ");
-	outtextxy(0, 330 + 60, "äº”å­è¦ç‚¹");
-	outtextxy(480, 330 + 60, "æ¬¡åºåœ¨å‰");
-	outtextxy(0, 360 + 60, "æ–œçº¿ä¸ºé˜´");
-	outtextxy(480, 360 + 60, "ç›´çº¿ä¸ºé˜³");
-	outtextxy(0, 390 + 60, "é˜´é˜³ç»“åˆ");
-	outtextxy(480, 390 + 60, "é˜²ä¸èƒœé˜²");
-	outtextxy(0, 420 + 60, "è¿ä¸‰è¿å››");
-	outtextxy(480, 420 + 60, "æ˜“è§ä¸ºæ˜");
-	outtextxy(0, 450 + 60, "è·³ä¸‰è·³å››");
-	outtextxy(480, 450 + 60, "æš—å‰‘æ·±è—");
-	outtextxy(0, 480 + 60, "å·±è½ä¸€å­");
-	outtextxy(480, 480 + 60, "æ•Œå¢ä¸€å…µ");
-	outtextxy(0, 510 + 60, "æ”»å…¶è¦ç‚¹");
-	outtextxy(480, 510 + 60, "å®ˆå…¶å¿…äº‰");
-	outtextxy(0, 540 + 60, "åŠ¿å·²å½¢æˆ");
-	outtextxy(480, 540 + 60, "è´¥å³é™ä¸´");
-	outtextxy(0, 570 + 60, "äº”å­ç²¾å");
-	outtextxy(480, 570 + 60, "ä¸€å­è¾“èµ¢");
+	outtextxy(0, 0 + 60, "ÏÈÊÖÒª¹¥");
+	outtextxy(480, 0 + 60, "ºóÊÖÒªÊØ");
+	outtextxy(0, 30 + 60, "ÒÔ¹¥ÎªÊØ");
+	outtextxy(480, 30 + 60, "ÒÔÊØ´ı¹¥");
+	outtextxy(0, 60 + 60, "¹¥ÊØ×ª»»");
+	outtextxy(480, 60 + 60, "É÷Ë¼±ä»¯");
+	outtextxy(0, 90 + 60, "ÏÈĞĞÕù¶á");
+	outtextxy(480, 90 + 60, "µØÆÆÌì¾ª");
+	outtextxy(0, 120 + 60, "ÊØÈ¡ÍâÊÆ");
+	outtextxy(480, 120 + 60, "¹¥¾ÛÄÚÁ¦");
+	outtextxy(0, 150 + 60, "°ËØÔÒ×ÊØ");
+	outtextxy(480, 150 + 60, "³É½ÇÒ×¹¥");
+	outtextxy(0, 180 + 60, "×è¶Ï·Ö¸ô");
+	outtextxy(480, 180 + 60, "ÎÈÈçÌ©É½");
+	outtextxy(0, 210 + 60, "²»Ë¼ÕùÏÈ");
+	outtextxy(480, 210 + 60, "Ê¤ÈçµÇÌì");
+	outtextxy(0, 240 + 60, "³õÅÌÕù¶ş");
+	outtextxy(480, 240 + 60, "ÖÕ¾ÖÇÀÈı");
+	outtextxy(0, 270 + 60, "ÁôÈı²»³å");
+	outtextxy(480, 270 + 60, "±ä»¯ÍòÇ§");
+	outtextxy(0, 300 + 60, "¶à¸öÏÈÊÖ");
+	outtextxy(480, 300 + 60, "Ï¸Ëã´ÎÏÈ");
+	outtextxy(0, 330 + 60, "Îå×ÓÒªµã");
+	outtextxy(480, 330 + 60, "´ÎĞòÔÚÇ°");
+	outtextxy(0, 360 + 60, "Ğ±ÏßÎªÒõ");
+	outtextxy(480, 360 + 60, "Ö±ÏßÎªÑô");
+	outtextxy(0, 390 + 60, "ÒõÑô½áºÏ");
+	outtextxy(480, 390 + 60, "·À²»Ê¤·À");
+	outtextxy(0, 420 + 60, "Á¬ÈıÁ¬ËÄ");
+	outtextxy(480, 420 + 60, "Ò×¼ûÎªÃ÷");
+	outtextxy(0, 450 + 60, "ÌøÈıÌøËÄ");
+	outtextxy(480, 450 + 60, "°µ½£Éî²Ø");
+	outtextxy(0, 480 + 60, "¼ºÂäÒ»×Ó");
+	outtextxy(480, 480 + 60, "µĞÔöÒ»±ø");
+	outtextxy(0, 510 + 60, "¹¥ÆäÒªµã");
+	outtextxy(480, 510 + 60, "ÊØÆä±ØÕù");
+	outtextxy(0, 540 + 60, "ÊÆÒÑĞÎ³É");
+	outtextxy(480, 540 + 60, "°Ü¼´½µÁÙ");
+	outtextxy(0, 570 + 60, "Îå×Ó¾«»ª");
+	outtextxy(480, 570 + 60, "Ò»×ÓÊäÓ®");
 
 
 
@@ -931,28 +931,28 @@ void background()
 void gameintroduce()
 {
 	settextcolor(BLACK);
-	settextstyle(20, 0, "å®‹ä½“");
-	outtextxy(0, 100, "äº”å­æ£‹æ¥å†ï¼šäº”å­æ£‹èµ·æºäºä¸­å›½ä¸Šå¤æ—¶ä»£çš„ä¼ ç»Ÿé»‘ç™½æ£‹ç§ä¹‹ä¸€ã€‚");
-	outtextxy(0, 120, "ä¸»è¦æµè¡Œäºåäººå’Œæ±‰å­—æ–‡åŒ–åœˆï¼Œæ˜¯ä¸–ç•Œä¸Šæœ€å¤è€çš„æ£‹é€šå¸¸åŒæ–¹åˆ†åˆ«ä½¿ç”¨é»‘ç™½ä¸¤è‰²çš„æ£‹å­");
-	outtextxy(0, 140, "ä¸‹åœ¨æ£‹ç›˜ç›´çº¿ä¸æ¨ªçº¿çš„äº¤å‰ç‚¹ä¸Šå…ˆå½¢æˆ5å­è¿çº¿è€…è·èƒœ");
-	outtextxy(0, 160, "äº”å­æ£‹ç©æ³•ï¼š");
-	outtextxy(0, 180, "ç»å…¸ç©æ³•ï¼š");
-	outtextxy(0, 220, "è‡ªå·²çš„äº”é¢—æ£‹å­è¿æˆä¸€æ¡çº¿ï¼Œå¯ä»¥æ¨ªç€ã€ç«–ç€ã€æ–œç€ï¼›");
-	outtextxy(0, 240, "è¿æˆçš„æ£‹å­ä¸­é—´ä¸èƒ½æœ‰å¯¹æ–¹çš„æ£‹å­ï¼Œå°±å¯ä»¥è·èƒœã€‚");
+	settextstyle(20, 0, "ËÎÌå");
+	outtextxy(0, 100, "Îå×ÓÆåÀ´Àú£ºÎå×ÓÆåÆğÔ´ÓÚÖĞ¹úÉÏ¹ÅÊ±´úµÄ´«Í³ºÚ°×ÆåÖÖÖ®Ò»¡£");
+	outtextxy(0, 120, "Ö÷ÒªÁ÷ĞĞÓÚ»ªÈËºÍºº×ÖÎÄ»¯È¦£¬ÊÇÊÀ½çÉÏ×î¹ÅÀÏµÄÆåÍ¨³£Ë«·½·Ö±ğÊ¹ÓÃºÚ°×Á½É«µÄÆå×Ó");
+	outtextxy(0, 140, "ÏÂÔÚÆåÅÌÖ±ÏßÓëºáÏßµÄ½»²æµãÉÏÏÈĞÎ³É5×ÓÁ¬ÏßÕß»ñÊ¤");
+	outtextxy(0, 160, "Îå×ÓÆåÍæ·¨£º");
+	outtextxy(0, 180, "¾­µäÍæ·¨£º");
+	outtextxy(0, 220, "×ÔÒÑµÄÎå¿ÅÆå×ÓÁ¬³ÉÒ»ÌõÏß£¬¿ÉÒÔºá×Å¡¢Êú×Å¡¢Ğ±×Å£»");
+	outtextxy(0, 240, "Á¬³ÉµÄÆå×ÓÖĞ¼ä²»ÄÜÓĞ¶Ô·½µÄÆå×Ó£¬¾Í¿ÉÒÔ»ñÊ¤¡£");
 
-	outtextxy(0, 260 + 30, "å¨±ä¹æ¨¡å¼ï¼š");
-	outtextxy(0, 280 + 30, "åŠ ç‚¹ï¼šæ¯å½“å¯¹æ‰‹å››å­è¿ç æ—¶ï¼Œæˆ‘æ–¹æŠ€èƒ½ç‚¹ + 1");
+	outtextxy(0, 260 + 30, "ÓéÀÖÄ£Ê½£º");
+	outtextxy(0, 280 + 30, "¼Óµã£ºÃ¿µ±¶ÔÊÖËÄ×ÓÁ¬ÖéÊ±£¬ÎÒ·½¼¼ÄÜµã + 1");
 
-	outtextxy(0, 300 + 30, "é“å…·1é”€æ¯ï¼šï¼ˆéœ€4ç‚¹ï¼‰");
-	outtextxy(0, 320 + 50, "é€‰ç”¨é“å…·é”€æ¯ï¼Œæ¥ä¸‹æ¥ä¸€ç€æ£‹ç”±åŸæœ¬é¢œè‰²çš„æ£‹å­å˜ä¸ºé“å…·æ£‹ï¼Œ");
-	outtextxy(0, 340 + 50, "è½å­å¤„ç‚¹ä½è¢«é”€æ¯ï¼Œé»‘ç™½åŒæ–¹å‡æ— æ³•è½å­");
-	outtextxy(0, 360 + 50, "é“å…·2æ¶ˆé™¤ï¼šï¼ˆéœ€3ç‚¹ï¼‰");
-	outtextxy(0, 380 + 80, "é€‰ç”¨é“å…·æ¶ˆé™¤ï¼Œæ¥ä¸‹æ¥ä¸€ç€æ£‹ç”±åŸæœ¬é¢œè‰²çš„æ£‹å­å˜ä¸ºæ¶ˆé™¤æ£‹ã€‚");
-	outtextxy(0, 400 + 80, "è½å­å¤„ï¼Œéšæœºä¸‰å­æ’åˆ—çš„å½¢çŠ¶çš„é»‘ç™½æ£‹å‡è¢«æ“¦å»ã€‚");
+	outtextxy(0, 300 + 30, "µÀ¾ß1Ïú»Ù£º£¨Ğè4µã£©");
+	outtextxy(0, 320 + 50, "Ñ¡ÓÃµÀ¾ßÏú»Ù£¬½ÓÏÂÀ´Ò»×ÅÆåÓÉÔ­±¾ÑÕÉ«µÄÆå×Ó±äÎªµÀ¾ßÆå£¬");
+	outtextxy(0, 340 + 50, "Âä×Ó´¦µãÎ»±»Ïú»Ù£¬ºÚ°×Ë«·½¾ùÎŞ·¨Âä×Ó");
+	outtextxy(0, 360 + 50, "µÀ¾ß2Ïû³ı£º£¨Ğè3µã£©");
+	outtextxy(0, 380 + 80, "Ñ¡ÓÃµÀ¾ßÏû³ı£¬½ÓÏÂÀ´Ò»×ÅÆåÓÉÔ­±¾ÑÕÉ«µÄÆå×Ó±äÎªÏû³ıÆå¡£");
+	outtextxy(0, 400 + 80, "Âä×Ó´¦£¬Ëæ»úÈı×ÓÅÅÁĞµÄĞÎ×´µÄºÚ°×Æå¾ù±»²ÁÈ¥¡£");
 
 
 }
-void game2()//é“å…·æ¨¡å¼
+void game2()//µÀ¾ßÄ£Ê½
 {
 
 	for (i = 1; i <= 15; i++)
@@ -963,16 +963,16 @@ void game2()//é“å…·æ¨¡å¼
 		}
 	}
 
-	button1(370, 5, 270, 40, "é“å…·æ¨¡å¼");
-	button1(0, 0, 125, 30, "ç©å®¶1");
-	button1(875, 0, 125, 30, "ç©å®¶2");
-	Rectangularlabel(0, 200, 130, 50, "é“å…·ç‚¹æ•°ï¼š");
-	Rectangularlabel(870, 200, 130, 50, "é“å…·ç‚¹æ•°ï¼š");
-	circlelabel(25, 400, 25, "æ¶ˆé™¤");
-	circlelabel(975, 400, 25, "æ¶ˆé™¤");
-	circlelabel(25, 600, 25, "é”€æ¯");
-	circlelabel(975, 600, 25, "é”€æ¯");
-	button1(370, 755, 270, 40, "è¿”å›é¡µé¢");
+	button1(370, 5, 270, 40, "µÀ¾ßÄ£Ê½");
+	button1(0, 0, 125, 30, "Íæ¼Ò1");
+	button1(875, 0, 125, 30, "Íæ¼Ò2");
+	Rectangularlabel(0, 200, 130, 50, "µÀ¾ßµãÊı£º");
+	Rectangularlabel(870, 200, 130, 50, "µÀ¾ßµãÊı£º");
+	circlelabel(25, 400, 25, "Ïû³ı");
+	circlelabel(975, 400, 25, "Ïû³ı");
+	circlelabel(25, 600, 25, "Ïú»Ù");
+	circlelabel(975, 600, 25, "Ïú»Ù");
+	button1(370, 755, 270, 40, "·µ»ØÒ³Ãæ");
 	ExMessage m;
 	int x, y, ret2 = 0;
 	int a = 0, c = 1, d = 1;
@@ -1038,20 +1038,20 @@ void game2()//é“å…·æ¨¡å¼
 
 		}
 
-		if (m.x <= 70 && m.x >= 0 && m.y <= 470 && m.y >= 380 && m.message == WM_LBUTTONDOWN)//é“å…·1çš„è®¾ç½®ï¼ˆå·¦ï¼‰
+		if (m.x <= 70 && m.x >= 0 && m.y <= 470 && m.y >= 380 && m.message == WM_LBUTTONDOWN)//µÀ¾ß1µÄÉèÖÃ£¨×ó£©
 		{
 
 			remove();
 		}
-		else if (m.x <= 1000 && m.x >= 930 && m.y <= 470 && m.y >= 380 && m.message == WM_LBUTTONDOWN)//é“å…·1çš„è®¾ç½®ï¼ˆå³ï¼‰
+		else if (m.x <= 1000 && m.x >= 930 && m.y <= 470 && m.y >= 380 && m.message == WM_LBUTTONDOWN)//µÀ¾ß1µÄÉèÖÃ£¨ÓÒ£©
 		{
 			remove();
 		}
-		else if (m.x <= 70 && m.x >= 0 && m.y <= 670 && m.y >= 580 && m.message == WM_LBUTTONDOWN)//é“å…·2çš„åŠŸèƒ½ï¼ˆå·¦ï¼‰
+		else if (m.x <= 70 && m.x >= 0 && m.y <= 670 && m.y >= 580 && m.message == WM_LBUTTONDOWN)//µÀ¾ß2µÄ¹¦ÄÜ£¨×ó£©
 		{
 			destroy();
 		}
-		else if (m.x <= 1000 && m.x >= 930 && m.y <= 670 && m.y >= 580 && m.message == WM_LBUTTONDOWN)//é“å…·2çš„è®¾ç½®ï¼ˆå³ï¼‰
+		else if (m.x <= 1000 && m.x >= 930 && m.y <= 670 && m.y >= 580 && m.message == WM_LBUTTONDOWN)//µÀ¾ß2µÄÉèÖÃ£¨ÓÒ£©
 		{
 			destroy();
 		}
@@ -1060,15 +1060,15 @@ void game2()//é“å…·æ¨¡å¼
 void circlelabel(int x, int y, int r, const char* text)
 {
 	LOGFONT fontstyle;
-	gettextstyle(&fontstyle);//è·å–å½“å‰å­—ä½“æ ·å¼LOGFONT
-	fontstyle.lfQuality = ANTIALIASED_QUALITY;//å­—ä½“è¾“å‡ºè´¨é‡ï¼šæŠ—é”¯é½¿
+	gettextstyle(&fontstyle);//»ñÈ¡µ±Ç°×ÖÌåÑùÊ½LOGFONT
+	fontstyle.lfQuality = ANTIALIASED_QUALITY;//×ÖÌåÊä³öÖÊÁ¿£º¿¹¾â³İ
 	settextstyle(&fontstyle);
 	setbkmode(TRANSPARENT);
 	settextcolor(BLACK);
 	setlinecolor(BLACK);
 	setlinestyle(PS_SOLID, 1);
 	setfillcolor(RGB(255, 178, 50));
-	settextstyle(20, 0, "æ¥·ä½“");
+	settextstyle(20, 0, "¿¬Ìå");
 
 	fillcircle(x, y, r);
 	int tx = x - r;
@@ -1078,22 +1078,22 @@ void circlelabel(int x, int y, int r, const char* text)
 void Rectangularlabel(int x, int y, int w, int h, const char* text)
 {
 	LOGFONT fontstyle;
-	gettextstyle(&fontstyle);//è·å–å½“å‰å­—ä½“æ ·å¼LOGFONT
+	gettextstyle(&fontstyle);//»ñÈ¡µ±Ç°×ÖÌåÑùÊ½LOGFONT
 
-	fontstyle.lfQuality = ANTIALIASED_QUALITY;//å­—ä½“è¾“å‡ºè´¨é‡ï¼šæŠ—é”¯é½¿
+	fontstyle.lfQuality = ANTIALIASED_QUALITY;//×ÖÌåÊä³öÖÊÁ¿£º¿¹¾â³İ
 	settextstyle(&fontstyle);
 	setbkmode(TRANSPARENT);
 	settextcolor(BLACK);
 	setlinecolor(BLACK);
 	setlinestyle(PS_SOLID, 5);
-	settextstyle(20, 0, "æ¥·ä½“");
+	settextstyle(20, 0, "¿¬Ìå");
 	setfillcolor(RGB(135, 206, 235));
 
 	RECT rect;
-	rect.left = x;//å·¦ä¸Šè§’çš„x
-	rect.top = y;//å·¦ä¸Šè§’çš„y
-	rect.right = x + w;//å³ä¸‹è§’çš„x
-	rect.bottom = y + h;//å³ä¸‹è§’çš„y
+	rect.left = x;//×óÉÏ½ÇµÄx
+	rect.top = y;//×óÉÏ½ÇµÄy
+	rect.right = x + w;//ÓÒÏÂ½ÇµÄx
+	rect.bottom = y + h;//ÓÒÏÂ½ÇµÄy
 	fillrectangle(rect.left = x, rect.top = y, rect.right = x + w, rect.bottom = y + h);
 	drawtext(text, &rect, DT_SINGLELINE | DT_VCENTER);
 }
@@ -1145,8 +1145,8 @@ void destroy()
 }
 void musictexiao1()
 {
-	//æ”¾åœ¨è½å­å‡½æ•°é‡Œé¢ã€‚æ¯æ”¾ä¸€æ¬¡å‡½æ•°å°±è§¦å‘ä¸€æ¬¡éŸ³æ•ˆ
-	//å…³é—­å‡½æ•°å°±æ˜¯è§¦å‘å…³é—­é”®
+	//·ÅÔÚÂä×Óº¯ÊıÀïÃæ¡£Ã¿·ÅÒ»´Îº¯Êı¾Í´¥·¢Ò»´ÎÒôĞ§
+	//¹Ø±Õº¯Êı¾ÍÊÇ´¥·¢¹Ø±Õ¼ü
 	mciSendString("open wuhun3.mp3 alias bbb type mpegvideo", NULL, 0, NULL);
 	mciSendString("play bbb ", NULL, 0, NULL);
 	Sleep(3500);
@@ -1156,8 +1156,8 @@ void musictexiao1()
 
 void musictexiao2()
 {
-	//æ”¾åœ¨è½å­å‡½æ•°é‡Œé¢ã€‚æ¯æ”¾ä¸€æ¬¡å‡½æ•°å°±è§¦å‘ä¸€æ¬¡éŸ³æ•ˆ
-	//å…³é—­å‡½æ•°å°±æ˜¯è§¦å‘å…³é—­é”®
+	//·ÅÔÚÂä×Óº¯ÊıÀïÃæ¡£Ã¿·ÅÒ»´Îº¯Êı¾Í´¥·¢Ò»´ÎÒôĞ§
+	//¹Ø±Õº¯Êı¾ÍÊÇ´¥·¢¹Ø±Õ¼ü
 	mciSendString("open wuhun2.mp3 alias ccc type mpegvideo", NULL, 0, NULL);
 	mciSendString("play ccc ", NULL, 0, NULL);
 	Sleep(3500);
@@ -1166,34 +1166,34 @@ void musictexiao2()
 }
 void musictexiao3()
 {
-	//æ”¾åœ¨è½å­å‡½æ•°é‡Œé¢ã€‚æ¯æ”¾ä¸€æ¬¡å‡½æ•°å°±è§¦å‘ä¸€æ¬¡éŸ³æ•ˆ
-	//å…³é—­å‡½æ•°å°±æ˜¯è§¦å‘å…³é—­é”®
+	//·ÅÔÚÂä×Óº¯ÊıÀïÃæ¡£Ã¿·ÅÒ»´Îº¯Êı¾Í´¥·¢Ò»´ÎÒôĞ§
+	//¹Ø±Õº¯Êı¾ÍÊÇ´¥·¢¹Ø±Õ¼ü
 	mciSendString("open ji.mp3 alias bbb type mpegvideo", NULL, 0, NULL);
 	mciSendString("play bbb ", NULL, 0, NULL);
 	Sleep(15000);
 	mciSendString("close bbb ", NULL, 0, NULL);
 
 }
-/*æˆ‘çš„æƒ³æ³•æ˜¯å§è¿™ä¸¤ä¸ªå‡½æ•°éƒ½æ”¾åœ¨é‚£ä¸ªéŸ³æ•ˆå¼€å…³é¡µé¢é‚£ä¸ªå‡½æ•°é‡Œé¢ã€‚
-è¿™æ ·æ“ä½œæ¯”è¾ƒæ–¹ä¾¿ï¼Œä¹Ÿä¸ä¼šå»æ¶‰åŠåˆåœ¨è½å­å‡½æ•°é‡Œé¢å»æ·»åŠ ï¼Œä»£ç å‡ºé”™çš„æ¦‚ç‡æ›´ä½*/
+/*ÎÒµÄÏë·¨ÊÇ°ÉÕâÁ½¸öº¯Êı¶¼·ÅÔÚÄÇ¸öÒôĞ§¿ª¹ØÒ³ÃæÄÇ¸öº¯ÊıÀïÃæ¡£
+ÕâÑù²Ù×÷±È½Ï·½±ã£¬Ò²²»»áÈ¥Éæ¼°ÓÖÔÚÂä×Óº¯ÊıÀïÃæÈ¥Ìí¼Ó£¬´úÂë³ö´íµÄ¸ÅÂÊ¸üµÍ*/
 void musicplaybr(void)
 {
-	//åœ¨æœ€å‰é¢å®šä¹‰musicb
+	//ÔÚ×îÇ°Ãæ¶¨Òåmusicb
 	if (musicb == 0)
 	{
 		mciSendString("open a.wav alias aaa type mpegvideo", NULL, 0, NULL);
 		mciSendString("play aaa repeat", NULL, 0, NULL);
-		//éŸ³ä¹æ˜¯è‡ªåŠ¨å¯åŠ¨
+		//ÒôÀÖÊÇ×Ô¶¯Æô¶¯
 	}
-	if (musicb == 1)/*å¡«å…¥éŸ³æ•ˆæ¡†å†…çš„å¼€å…³åæ ‡*/
+	if (musicb == 1)/*ÌîÈëÒôĞ§¿òÄÚµÄ¿ª¹Ø×ø±ê*/
 	{
-		mciSendString("stop aaa", NULL, 0, NULL);//æš‚åœéƒ¨åˆ†
-		//å¦‚æœæ˜¯musicb=1ï¼Œå°±æ˜¯æš‚åœå‡½æ•°
+		mciSendString("stop aaa", NULL, 0, NULL);//ÔİÍ£²¿·Ö
+		//Èç¹ûÊÇmusicb=1£¬¾ÍÊÇÔİÍ£º¯Êı
 	}
-	if (musicb == 2 /*ï¼ˆå‰é¢è¦æ³¨å…¥è¯»å–é¼ æ ‡çš„ä»£ç ï¼‰*/)
+	if (musicb == 2 /*£¨Ç°ÃæÒª×¢Èë¶ÁÈ¡Êó±êµÄ´úÂë£©*/)
 	{
-		mciSendString("resume aaa", 0, 0, 0);//ç»§ç»­æ’­æ”¾
-		//å¦‚æœæ˜¯musicb=2ï¼Œå°±ç»§ç»­æ’­æ”¾
+		mciSendString("resume aaa", 0, 0, 0);//¼ÌĞø²¥·Å
+		//Èç¹ûÊÇmusicb=2£¬¾Í¼ÌĞø²¥·Å
 	}
 	//_getch();
 
