@@ -28,7 +28,7 @@
    ./five_in_a_row 
    ```
    
-3. 使用vs2022后打开时，将属性中的字符集改为多字节符集![](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20000906.png)
+3. 使用vs2022后打开时，将属性中的字符集改为多字节符集![](https://github.com/Kling-zero/C-FIve-Rows/blob/main/Pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20000906.png)
 
 ## 使用的技术
 
@@ -66,8 +66,8 @@ GitHub：[我的GitHub地址](https://github.com/Kling-zero)
 
 1. 游戏截图
 
-![](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001337.png)
+![](https://github.com/Kling-zero/C-FIve-Rows/blob/main/Pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001337.png)
 
-![屏幕截图 2023-10-11 001407](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001407.png)
+![屏幕截图 2023-10-11 001407](https://github.com/Kling-zero/C-FIve-Rows/blob/main/Pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001407.png)
 
-![屏幕截图 2023-10-11 001415](https://github.com/Kling-zero/C-FIve-Rows/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001415.png)
+![屏幕截图 2023-10-11 001415](https://github.com/Kling-zero/C-FIve-Rows/blob/main/Pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-11%20001415.png)
