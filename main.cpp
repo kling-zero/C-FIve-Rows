@@ -852,13 +852,9 @@ void gamemaker()
 	button2(190, 600, 200, 60, "返回页面");
 	settextstyle(40, 0, _T("黑体"));
 	outtextxy(173, 10, _T("制作人名单"));
-	outtextxy(93, 150 + 30, _T("组长：故里"));
-	outtextxy(93, 190 + 30, _T("副组长：K0x1e  投投"));
-	outtextxy(93, 230 + 30, _T("技术官：摸鱼帝"));
-	outtextxy(93, 270 + 30, _T("产品经理：没有脑袋  烟囱"));
-	outtextxy(93, 310 + 30, _T("监督官： 咸鱼之王"));
-	outtextxy(93, 350 + 30, _T("信息官： 小宁  苏德洲"));
-
+	
+	outtextxy(93, 190 + 30, _T("Kling-zero"));
+	
 	ExMessage m;
 	while (1)//各种功能的实现
 	{
