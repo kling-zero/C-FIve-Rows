@@ -28,9 +28,17 @@
    ./five_in_a_row 
    ```
    
-3. 使用vs2022后打开时，将属性中的字符集改为多字节符集![image-20231011000918605](C:\Users\35164\AppData\Roaming\Typora\typora-user-images\image-20231011000918605.png)
+3. 使用vs2022后打开时，将属性中的字符集改为多字节符集![](C:\Users\35164\Desktop\Cpp\c-golang\pictures\屏幕截图 2023-10-11 000906.png)
 
 4. 游戏截图
+
+![](C:\Users\35164\Desktop\Cpp\c-golang\pictures\屏幕截图 2023-10-11 001337.png)
+
+![屏幕截图 2023-10-11 001407](C:\Users\35164\Desktop\Cpp\c-golang\pictures\屏幕截图 2023-10-11 001407.png)
+
+![屏幕截图 2023-10-11 001415](C:\Users\35164\Desktop\Cpp\c-golang\pictures\屏幕截图 2023-10-11 001415.png)
+
+
 
 
 
