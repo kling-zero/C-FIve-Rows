@@ -64,7 +64,7 @@ void button2(int x, int y, int w, int h, const char* text)
 	settextcolor(BLACK);
 	setfillcolor(RGB(140, 180, 120));
 	fillroundrect(x, y, x + w, y + h, 10, 10);
-	settextstyle(30, 0, "楷体");
+	settextstyle(30, 0, _T("楷体"));
 	int tx = x + (w - textwidth(text)) / 2;
 	int ty = y + (h - textheight(text)) / 2;
 	outtextxy(tx, ty, text);
@@ -200,7 +200,7 @@ void playwaypage()//游玩方式页面
 	background();
 	setfillcolor(BLACK);
 	settextcolor(BLACK);
-	settextstyle(40, 0, "楷体");
+	settextstyle(40, 0, _T("楷体"));
 	button2(163, 250, 270, 40, "正常模式");
 	button2(163, 500, 270, 40, "道具模式");
 	if (token == 1)
@@ -406,7 +406,7 @@ void gameinfo()
 	setfillcolor(BLACK);
 	button2(190, 600, 200, 60, "返回页面");
 	settextcolor(BLACK);
-	settextstyle(40, 0, "楷体");
+	settextstyle(40, 0,"楷体");
 	outtextxy(200, 5, "游玩介绍");
 	gameintroduce();
 	ExMessage m;
@@ -443,9 +443,9 @@ start:;
 		button1(163, 200, 270, 40, "设置页面");
 		button1(163, 350, 270, 40, "游玩说明");
 		button1(163, 650, 270, 40, "退出游戏");
-		settextstyle(50, 0, "楷体");
+		settextstyle(50, 0, _T("楷体"));
 		settextcolor(RGB(200, 240, 150));
-		outtextxy(173, 50, "千宁五子棋");
+		outtextxy(173, 50, _T("千宁五子棋"));
 	}
 option:;
 	if (flag == 1)//1为设置页面
@@ -850,14 +850,15 @@ void gamemaker()
 	cleardevice();
 	settextcolor(LIGHTCYAN);
 	button2(190, 600, 200, 60, "返回页面");
-	settextstyle(40, 0, "楷体");
-	outtextxy(173, 10, "制作人名单");
-	outtextxy(93, 150 + 30, "组长：故里");
-	outtextxy(93, 190 + 30, "副组长：K0x1e  投投");
-	outtextxy(93, 230 + 30, "技术官：摸鱼帝");
-	outtextxy(93, 270 + 30, "产品经理：没有脑袋  烟囱");
-	outtextxy(93, 310 + 30, "监督官： 咸鱼之王");
-	outtextxy(93, 350 + 30, "信息官： 小宁  苏德洲");
+	settextstyle(40, 0, _T("黑体"));
+	outtextxy(173, 10, _T("制作人名单"));
+	outtextxy(93, 150 + 30, _T("组长：故里"));
+	outtextxy(93, 190 + 30, _T("副组长：K0x1e  投投"));
+	outtextxy(93, 230 + 30, _T("技术官：摸鱼帝"));
+	outtextxy(93, 270 + 30, _T("产品经理：没有脑袋  烟囱"));
+	outtextxy(93, 310 + 30, _T("监督官： 咸鱼之王"));
+	outtextxy(93, 350 + 30, _T("信息官： 小宁  苏德洲"));
+
 	ExMessage m;
 	while (1)//各种功能的实现
 	{
@@ -882,73 +883,83 @@ void background()
 	setlinecolor(BLACK);
 	rectangle(0, 55, 125, 680);
 	rectangle(470, 55, 600, 680);
-	settextstyle(30, 0, "楷体");
+	settextstyle(30, 0, ("楷体"));
 	settextcolor(BLACK);
-	outtextxy(0, 0 + 60, "先手要攻");
-	outtextxy(480, 0 + 60, "后手要守");
-	outtextxy(0, 30 + 60, "以攻为守");
-	outtextxy(480, 30 + 60, "以守待攻");
-	outtextxy(0, 60 + 60, "攻守转换");
-	outtextxy(480, 60 + 60, "慎思变化");
-	outtextxy(0, 90 + 60, "先行争夺");
-	outtextxy(480, 90 + 60, "地破天惊");
-	outtextxy(0, 120 + 60, "守取外势");
-	outtextxy(480, 120 + 60, "攻聚内力");
-	outtextxy(0, 150 + 60, "八卦易守");
-	outtextxy(480, 150 + 60, "成角易攻");
-	outtextxy(0, 180 + 60, "阻断分隔");
-	outtextxy(480, 180 + 60, "稳如泰山");
-	outtextxy(0, 210 + 60, "不思争先");
-	outtextxy(480, 210 + 60, "胜如登天");
-	outtextxy(0, 240 + 60, "初盘争二");
-	outtextxy(480, 240 + 60, "终局抢三");
-	outtextxy(0, 270 + 60, "留三不冲");
-	outtextxy(480, 270 + 60, "变化万千");
-	outtextxy(0, 300 + 60, "多个先手");
-	outtextxy(480, 300 + 60, "细算次先");
-	outtextxy(0, 330 + 60, "五子要点");
-	outtextxy(480, 330 + 60, "次序在前");
-	outtextxy(0, 360 + 60, "斜线为阴");
-	outtextxy(480, 360 + 60, "直线为阳");
-	outtextxy(0, 390 + 60, "阴阳结合");
-	outtextxy(480, 390 + 60, "防不胜防");
-	outtextxy(0, 420 + 60, "连三连四");
-	outtextxy(480, 420 + 60, "易见为明");
-	outtextxy(0, 450 + 60, "跳三跳四");
-	outtextxy(480, 450 + 60, "暗剑深藏");
-	outtextxy(0, 480 + 60, "己落一子");
-	outtextxy(480, 480 + 60, "敌增一兵");
-	outtextxy(0, 510 + 60, "攻其要点");
-	outtextxy(480, 510 + 60, "守其必争");
-	outtextxy(0, 540 + 60, "势已形成");
-	outtextxy(480, 540 + 60, "败即降临");
-	outtextxy(0, 570 + 60, "五子精华");
-	outtextxy(480, 570 + 60, "一子输赢");
-
+	outtextxy(64, 0, _T("先手要攻"));
+	outtextxy(544, 0, _T("后手要守"));
+	outtextxy(64, 90, _T("以攻为守"));
+	outtextxy(544, 90, _T("以守待攻"));
+	outtextxy(64, 180, _T("攻守转换"));
+	outtextxy(544, 180, _T("慎思变化"));
+	outtextxy(64, 270, _T("先行争夺"));
+	outtextxy(544, 270, _T("地破天惊"));
+	outtextxy(64, 360, _T("守取外势"));
+	outtextxy(544, 360, _T("攻聚内力"));
+	outtextxy(64, 450, _T("八卦易守"));
+	outtextxy(544, 450, _T("成角易攻"));
+	outtextxy(64, 540, _T("阻断分隔"));
+	outtextxy(544, 540, _T("稳如泰山"));
+	outtextxy(192, 0, _T("攻守转换"));
+	outtextxy(672, 0, _T("慎思变化"));
+	outtextxy(192, 90, _T("先行争夺"));
+	outtextxy(672, 90, _T("地破天惊"));
+	outtextxy(192, 180, _T("守取外势"));
+	outtextxy(672, 180, _T("攻聚内力"));
+	outtextxy(192, 270, _T("八卦易守"));
+	outtextxy(672, 270, _T("成角易攻"));
+	outtextxy(320, 0, _T("阻断分隔"));
+	outtextxy(800, 0, _T("稳如泰山"));
+	outtextxy(320, 90, _T("不思争先"));
+	outtextxy(800, 90, _T("胜如登天"));
+	outtextxy(320, 180, _T("初盘争二"));
+	outtextxy(800, 180, _T("终局抢三"));
+	outtextxy(0, 270 + 60, _T("留三不冲"));
+	outtextxy(480, 270 + 60, _T("变化万千"));
+	outtextxy(0, 300 + 60, _T("多个先手"));
+	outtextxy(480, 300 + 60, _T("细算次先"));
+	outtextxy(0, 330 + 60, _T("五子要点"));
+	outtextxy(480, 330 + 60, _T("次序在前"));
+	outtextxy(0, 360 + 60, _T("斜线为阴"));
+	outtextxy(480, 360 + 60, _T("直线为阳"));
+	outtextxy(0, 390 + 60, _T("阴阳结合"));
+	outtextxy(480, 390 + 60, _T("防不胜防"));
+	outtextxy(0, 420 + 60, _T("连三连四"));
+	outtextxy(480, 420 + 60, _T("易见为明"));
+	outtextxy(0, 450 + 60, _T("跳三跳四"));
+	outtextxy(480, 450 + 60, _T("暗剑深藏"));
+	outtextxy(0, 480 + 60, _T("己落一子"));
+	outtextxy(480, 480 + 60, _T("敌增一兵"));
+	outtextxy(0, 510 + 60, _T("攻其要点"));
+	outtextxy(480, 510 + 60, _T("守其必争"));
+	outtextxy(0, 540 + 60, _T("势已形成"));
+	outtextxy(480, 540 + 60, _T("败即降临"));
+	outtextxy(0, 570 + 60, _T("五子精华"));
+	outtextxy(480, 570 + 60, _T("一子输赢"));
 
 
 }
 void gameintroduce()
 {
 	settextcolor(BLACK);
-	settextstyle(20, 0, "宋体");
-	outtextxy(0, 100, "五子棋来历：五子棋起源于中国上古时代的传统黑白棋种之一。");
-	outtextxy(0, 120, "主要流行于华人和汉字文化圈，是世界上最古老的棋通常双方分别使用黑白两色的棋子");
-	outtextxy(0, 140, "下在棋盘直线与横线的交叉点上先形成5子连线者获胜");
-	outtextxy(0, 160, "五子棋玩法：");
-	outtextxy(0, 180, "经典玩法：");
-	outtextxy(0, 220, "自已的五颗棋子连成一条线，可以横着、竖着、斜着；");
-	outtextxy(0, 240, "连成的棋子中间不能有对方的棋子，就可以获胜。");
+	
+	settextstyle(20, 0, _T("宋体"));
+	outtextxy(0, 100, _T("五子棋来历：五子棋起源于中国上古时代的传统黑白棋种之一。"));
+	outtextxy(0, 120, _T("主要流行于华人和汉字文化圈，是世界上最古老的棋通常双方分别使用黑白两色的棋子"));
+	outtextxy(0, 140, _T("下在棋盘直线与横线的交叉点上先形成5子连线者获胜"));
+	outtextxy(0, 160, _T("五子棋玩法："));
+	outtextxy(0, 180, _T("经典玩法："));
+	outtextxy(0, 220, _T("自己的五颗棋子连成一条线，可以横着、竖着、斜着；"));
+	outtextxy(0, 240, _T("连成的棋子中间不能有对方的棋子，就可以获胜。"));
 
-	outtextxy(0, 260 + 30, "娱乐模式：");
-	outtextxy(0, 280 + 30, "加点：每当对手四子连珠时，我方技能点 + 1");
+	outtextxy(0, 260 + 30, _T("娱乐模式："));
+	outtextxy(0, 280 + 30, _T("加点：每当对手四子连珠时，我方技能点 + 1"));
 
-	outtextxy(0, 300 + 30, "道具1销毁：（需4点）");
-	outtextxy(0, 320 + 50, "选用道具销毁，接下来一着棋由原本颜色的棋子变为道具棋，");
-	outtextxy(0, 340 + 50, "落子处点位被销毁，黑白双方均无法落子");
-	outtextxy(0, 360 + 50, "道具2消除：（需3点）");
-	outtextxy(0, 380 + 80, "选用道具消除，接下来一着棋由原本颜色的棋子变为消除棋。");
-	outtextxy(0, 400 + 80, "落子处，随机三子排列的形状的黑白棋均被擦去。");
+	outtextxy(0, 300 + 30, _T("道具1销毁：（需4点）"));
+	outtextxy(0, 320 + 50, _T("选用道具销毁，接下来一着棋由原本颜色的棋子变为道具棋，"));
+	outtextxy(0, 340 + 50, _T("落子处点位被销毁，黑白双方均无法落子"));
+	outtextxy(0, 360 + 50, _T("道具2消除：（需3点）"));
+	outtextxy(0, 380 + 80, _T("选用道具消除，接下来一着棋由原本颜色的棋子变为消除棋。"));
+	outtextxy(0, 400 + 80, _T("落子处，随机三子排列的形状的黑白棋均被擦去。"));
 
 
 }
@@ -1068,12 +1079,12 @@ void circlelabel(int x, int y, int r, const char* text)
 	setlinecolor(BLACK);
 	setlinestyle(PS_SOLID, 1);
 	setfillcolor(RGB(255, 178, 50));
-	settextstyle(20, 0, "楷体");
+	settextstyle(20, 0, _T("楷体"));
 
 	fillcircle(x, y, r);
 	int tx = x - r;
 	int ty = y - r / 2;
-	outtextxy(tx, ty, text);
+	outtextxy(tx, ty, _T(text));
 }
 void Rectangularlabel(int x, int y, int w, int h, const char* text)
 {
@@ -1086,7 +1097,7 @@ void Rectangularlabel(int x, int y, int w, int h, const char* text)
 	settextcolor(BLACK);
 	setlinecolor(BLACK);
 	setlinestyle(PS_SOLID, 5);
-	settextstyle(20, 0, "楷体");
+	settextstyle(20, 0, _T("楷体"));
 	setfillcolor(RGB(135, 206, 235));
 
 	RECT rect;
@@ -1147,10 +1158,10 @@ void musictexiao1()
 {
 	//放在落子函数里面。每放一次函数就触发一次音效
 	//关闭函数就是触发关闭键
-	mciSendString("open wuhun3.mp3 alias bbb type mpegvideo", NULL, 0, NULL);
-	mciSendString("play bbb ", NULL, 0, NULL);
+	mciSendString(_T("open wuhun3.mp3 alias bbb type mpegvideo"), NULL, 0, NULL);
+	mciSendString(_T("play bbb "), NULL, 0, NULL);
 	Sleep(3500);
-	mciSendString("close bbb ", NULL, 0, NULL);
+	mciSendString(_T("close bbb "), NULL, 0, NULL);
 
 }
 
@@ -1158,20 +1169,20 @@ void musictexiao2()
 {
 	//放在落子函数里面。每放一次函数就触发一次音效
 	//关闭函数就是触发关闭键
-	mciSendString("open wuhun2.mp3 alias ccc type mpegvideo", NULL, 0, NULL);
-	mciSendString("play ccc ", NULL, 0, NULL);
+	mciSendString(_T("open wuhun2.mp3 alias ccc type mpegvideo"), NULL, 0, NULL);
+	mciSendString(_T("play ccc "), NULL, 0, NULL);
 	Sleep(3500);
-	mciSendString("close ccc ", NULL, 0, NULL);
+	mciSendString(_T("close ccc"), NULL, 0, NULL);
 
 }
 void musictexiao3()
 {
 	//放在落子函数里面。每放一次函数就触发一次音效
 	//关闭函数就是触发关闭键
-	mciSendString("open ji.mp3 alias bbb type mpegvideo", NULL, 0, NULL);
-	mciSendString("play bbb ", NULL, 0, NULL);
+	mciSendString(_T("open ji.mp3 alias bbb type mpegvideo"), NULL, 0, NULL);
+	mciSendString(_T("play bbb "), NULL, 0, NULL);
 	Sleep(15000);
-	mciSendString("close bbb ", NULL, 0, NULL);
+	mciSendString(_T("close bbb "), NULL, 0, NULL);
 
 }
 /*我的想法是吧这两个函数都放在那个音效开关页面那个函数里面。
@@ -1181,18 +1192,18 @@ void musicplaybr(void)
 	//在最前面定义musicb
 	if (musicb == 0)
 	{
-		mciSendString("open a.wav alias aaa type mpegvideo", NULL, 0, NULL);
-		mciSendString("play aaa repeat", NULL, 0, NULL);
+		mciSendString(_T("open a.wav alias aaa type mpegvideo"), NULL, 0, NULL);
+		mciSendString(_T("play aaa repeat"), NULL, 0, NULL);
 		//音乐是自动启动
 	}
 	if (musicb == 1)/*填入音效框内的开关坐标*/
 	{
-		mciSendString("stop aaa", NULL, 0, NULL);//暂停部分
+		mciSendString(_T("stop aaa"), NULL, 0, NULL);//暂停部分
 		//如果是musicb=1，就是暂停函数
 	}
 	if (musicb == 2 /*（前面要注入读取鼠标的代码）*/)
 	{
-		mciSendString("resume aaa", 0, 0, 0);//继续播放
+		mciSendString(_T("resume aaa"), 0, 0, 0);//继续播放
 		//如果是musicb=2，就继续播放
 	}
 	//_getch();
